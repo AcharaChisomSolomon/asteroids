@@ -1,3 +1,4 @@
+from asteroid import Asteroid
 from constants import *
 from player import Player
 import pygame
@@ -9,6 +10,9 @@ def main():
 
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
+
+    Asteroid.containers = (asteroids, updateable, drawable)
 
     Player.containers = (updateable, drawable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
